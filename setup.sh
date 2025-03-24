@@ -29,7 +29,7 @@ cp $BUILD_DIR/index.html $TEMPLATES_DIR/
 cd ..
 
 echo "Setting up PostgreSQL tables..."
-python3 server.py  # Ensure this runs `create_tables()` safely
+python3 ./api/server.py  # Ensure this runs `create_tables()` safely
 
 echo "Starting Flask server with Gunicorn..."
 gunicorn server:app --bind 0.0.0.0:5000 --workers 4
