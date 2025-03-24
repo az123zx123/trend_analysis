@@ -4,7 +4,7 @@ set -e  # Stop on error
 
 echo "Setting up virtual environment..."
 python3 -m venv ./api/venv
-source venv/bin/activate
+source ./api/venv/bin/activate
 
 echo "Installing Python dependencies..."
 pip install --upgrade pip
