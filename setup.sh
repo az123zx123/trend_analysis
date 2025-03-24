@@ -3,7 +3,7 @@
 set -e  # Stop on error
 
 echo "Setting up virtual environment..."
-python3 -m venv venv
+python3 -m venv ./api/venv
 source venv/bin/activate
 
 echo "Installing Python dependencies..."
@@ -26,10 +26,8 @@ mkdir -p $STATIC_DIR $TEMPLATES_DIR
 cp -r $BUILD_DIR/* $STATIC_DIR/
 cp $BUILD_DIR/index.html $TEMPLATES_DIR/
 
-cd ..
-
 echo "Setting up PostgreSQL tables..."
-python3 ./api/server.py  # Ensure this runs `create_tables()` safely
+python3 server.py  # Ensure this runs `create_tables()` safely
 
 echo "Starting Flask server with Gunicorn..."
 gunicorn server:app --bind 0.0.0.0:5000 --workers 4
