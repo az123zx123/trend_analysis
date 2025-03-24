@@ -19,7 +19,7 @@ npm run build
 echo "Copying build files to Flask..."
 # Adjust for build or dist based on your React setup (Vite = dist, CRA = build)
 BUILD_DIR="build"
-STATIC_DIR="./api/static"
+STATIC_DIR="./api"
 TEMPLATES_DIR="./api/templates"
 
 mkdir -p $STATIC_DIR $TEMPLATES_DIR
@@ -27,7 +27,7 @@ cp -r $BUILD_DIR/* $STATIC_DIR/
 cp $BUILD_DIR/index.html $TEMPLATES_DIR/
 
 echo "Setting up PostgreSQL tables..."
-python3 server.py  # Ensure this runs `create_tables()` safely
+python3 ./api/server.py  # Ensure this runs `create_tables()` safely
 
 echo "Starting Flask server with Gunicorn..."
 gunicorn server:app --bind 0.0.0.0:5000 --workers 4
