@@ -1,0 +1,7 @@
+flask
+flask-cors
+flask-apscheduler
+openai
+psycopg2-binary
+requests
+filelock
