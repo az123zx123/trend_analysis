@@ -27,11 +27,11 @@ LOCK_PATH = CONFIG_PATH + ".lock"
 LOCK_TIMEOUT = 5  # seconds to wait on lock
 
 # PostgreSQL DB settings
-DB_NAME = "news"
-DB_USER = "postgres"
-DB_PASSWORD = "1111"
-DB_HOST = "localhost"
-DB_PORT = "5432"
+DB_NAME = "news" #modify this to your postgres database name
+DB_USER = "postgres" #modify this to your postgres username
+DB_PASSWORD = "1111" #modify this to your postgres password
+DB_HOST = "localhost" #modify this to your postgres host
+DB_PORT = "5432" #modify this to your postgres port
 
 # APScheduler instance
 scheduler = APScheduler()

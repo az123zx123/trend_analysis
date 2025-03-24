@@ -8,7 +8,7 @@ source venv/bin/activate
 
 echo "Installing Python dependencies..."
 pip install --upgrade pip
-pip install -r ../api/requirements.txt
+pip install -r ./api/requirements.txt
 
 echo "Installing Node dependencies..."
 npm install
@@ -19,8 +19,8 @@ npm run build
 echo "Copying build files to Flask..."
 # Adjust for build or dist based on your React setup (Vite = dist, CRA = build)
 BUILD_DIR="dist"
-STATIC_DIR="../api/static"
-TEMPLATES_DIR="../api/templates"
+STATIC_DIR="./api/static"
+TEMPLATES_DIR="./api/templates"
 
 mkdir -p $STATIC_DIR $TEMPLATES_DIR
 cp -r $BUILD_DIR/* $STATIC_DIR/
