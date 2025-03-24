@@ -28,7 +28,7 @@ LOCK_TIMEOUT = 5  # seconds to wait on lock
 
 # PostgreSQL DB settings
 DB_NAME = "news" #modify this to your postgres database name
-DB_USER = "postgres" #modify this to your postgres username
+DB_USER = "test" #modify this to your postgres username
 DB_PASSWORD = "1111" #modify this to your postgres password
 DB_HOST = "localhost" #modify this to your postgres host
 DB_PORT = "5432" #modify this to your postgres port
@@ -208,10 +208,12 @@ def load_summary(topic, size = 5):
         ORDER BY published_date DESC
         LIMIT %s;
     """, (f"%{topic.lower()}%", size)) #The % is a wildcard character that represents zero or more characters. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
-    results = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return results
+        results = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return results
+    else:
+        raise Exception("Connection to database failed.")
 
 def formatted_report(topic):
     """
