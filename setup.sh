@@ -18,7 +18,7 @@ npm run build
 
 echo "Copying build files to Flask..."
 # Adjust for build or dist based on your React setup (Vite = dist, CRA = build)
-BUILD_DIR="dist"
+BUILD_DIR="build"
 STATIC_DIR="./api/static"
 TEMPLATES_DIR="./api/templates"
 
