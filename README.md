@@ -18,10 +18,9 @@ A full-stack application that periodically fetches news by topic, summarizes the
 | Layer       | Tech           |
 |-------------|----------------|
 | Frontend    | React |
-| Backend     | Flask + Flask-APScheduler |
+| Backend     | Flask + APScheduler |
 | AI          | OpenAI GPT-4o |
 | Database    | PostgreSQL |
-| Deployment  | Gunicorn |
 ---
 
 ## 🛠️ Setup Instructions
@@ -66,10 +65,6 @@ chmod +x setup.sh
 ### 6. Run the App
 ```bash
 python3 ./api/server.py 
-```
-Or in production:
-```bash
-gunicorn server:app --bind 0.0.0.0:5000 --workers 4
 ```
 
 # Getting Started with Create React App
